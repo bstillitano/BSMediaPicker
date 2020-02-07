@@ -7,7 +7,7 @@ Welcome to **BSMediaPicker,** a UI/UX framework for allowing users to quickly an
 [![Twitter](https://img.shields.io/badge/twitter-bstillita-1da1f2)](https://twitter.com/bstillita)
 ![Platform](https://img.shields.io/badge/platform-ios-success)
 
-# Screenshots
+## Screenshots
 
 ![](screenshot.gif)
 
@@ -17,7 +17,7 @@ Welcome to **BSMediaPicker,** a UI/UX framework for allowing users to quickly an
 - [x] Pre-built UI (no customisation....YET)
 - [x] Implements the default UIImagePickerControllerDelegate and UIDocumentPickerDelegate into a handy single MediaPickerDelegate
 
-# Usage
+## Usage
 
 ```
 import BSMediaPicker
