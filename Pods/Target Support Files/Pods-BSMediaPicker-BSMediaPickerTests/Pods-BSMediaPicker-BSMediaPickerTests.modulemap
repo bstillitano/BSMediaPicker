@@ -1,0 +1,6 @@
+framework module Pods_BSMediaPicker_BSMediaPickerTests {
+  umbrella header "Pods-BSMediaPicker-BSMediaPickerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
