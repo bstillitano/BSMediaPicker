@@ -30,9 +30,9 @@ public class MediaPicker: NSObject {
     var documentPicker = UIDocumentPickerViewController(documentTypes: [(kUTTypeImage as String), (kUTTypeMovie as String)], in: .import)
 
     //Delegate
-    weak var delegate: MediaPickerDelegate? = nil
+    public weak var delegate: MediaPickerDelegate? = nil
 
-    override init() {
+    public override init() {
         super.init()
     }
 
