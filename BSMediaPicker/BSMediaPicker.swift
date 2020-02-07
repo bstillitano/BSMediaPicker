@@ -126,14 +126,14 @@ public class MediaPicker: NSObject {
 }
 
 extension MediaPicker: UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         //Dismiss Picker Controller
         picker.dismiss(animated: true) {
             self.delegate?.imagePickerController(picker, didFinishPickingMediaWithInfo: info)
         }
     }
 
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         //Dismiss Picker Controller
         picker.dismiss(animated: true) {
             self.delegate?.imagePickerControllerDidCancel(picker)
@@ -142,11 +142,11 @@ extension MediaPicker: UIImagePickerControllerDelegate {
 }
 
 extension MediaPicker: UIDocumentPickerDelegate {
-    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+    public func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         delegate?.documentPickerWasCancelled(controller)
     }
 
-    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         delegate?.documentPicker(controller, didPickDocumentsAt: urls)
     }
 }
