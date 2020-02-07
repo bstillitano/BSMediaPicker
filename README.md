@@ -17,6 +17,32 @@ Welcome to **BSMediaPicker,** a UI/UX framework for allowing users to quickly an
 - [x] Pre-built UI (no customisation....YET)
 - [x] Implements the default UIImagePickerControllerDelegate and UIDocumentPickerDelegate into a handy single MediaPickerDelegate
 
+# Usage
+
+```
+import BSMediaPicker
+
+class ViewController: UIViewController{
+  //MediaPicker must be global to your class for delegate methods to work.
+  //ARC will remove it from memory if you make it local to your function.
+  var mediaPicker: MediaPicker = MediaPicker()
+  
+  func foo() {
+    //Set your delegate here to handle media selection
+    mediaPicker.delegate = self
+    
+    //Show your picker using any of the following
+    mediaPicker.showMediaPicker(from: self) //This will show a picker with photos and videos
+    //OR
+    mediaPicker.showMediaPicker(from: self, type: .photos)
+    //OR
+    mediaPicker.showMediaPicker(from: self, type: .videos)
+    //OR
+    mediaPicker.showMediaPicker(from: self, type: .photosVideos) //This is the default if you don't specify a type.
+  }
+}
+```
+
 ## Requirements
 
 * iOS 11.0+
