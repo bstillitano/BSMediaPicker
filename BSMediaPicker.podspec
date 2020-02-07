@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
 s.platform = :ios
-s.ios.deployment_target = '10.0'
+s.ios.deployment_target = '11.0'
 s.name = "BSMediaPicker"
 s.summary = "BSMediaPicker lets a user select photos and videos from their device."
 s.requires_arc = true
