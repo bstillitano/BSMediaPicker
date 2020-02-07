@@ -7,6 +7,10 @@ Welcome to **BSMediaPicker,** a UI/UX framework for allowing users to quickly an
 [![Twitter](https://img.shields.io/badge/twitter-bstillita-1da1f2)](https://twitter.com/bstillita)
 ![Platform](https://img.shields.io/badge/platform-ios-success)
 
+# Screenshots
+
+![](screenshot.gif)
+
 ## Features
 
 - [x] Able to set picker type on the fly (photo only, video only, photo and video)
