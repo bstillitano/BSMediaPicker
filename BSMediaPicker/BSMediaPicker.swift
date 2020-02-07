@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MobileCoreServices
 
-enum MediaPickerType: String {
+public enum MediaPickerType: String {
     case photos
     case videos
     case photosVideos
@@ -23,7 +23,7 @@ public protocol MediaPickerDelegate: NSObjectProtocol {
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL])
 }
 
-class MediaPicker: NSObject {
+public class MediaPicker: NSObject {
     //Data
     var viewController: UIViewController? = nil
     var imagePicker: UIImagePickerController = UIImagePickerController()
