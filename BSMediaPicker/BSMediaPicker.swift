@@ -43,6 +43,14 @@ public class MediaPicker: NSObject {
         //Create Alert
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
+        //Add Camera Action
+        let cameraAction: UIAlertAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+            self.presentCameraPicker(type: type)
+        }
+        cameraAction.setValue(UIImage(named: "gallery_picker_camera"), forKey: "image")
+        cameraAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+        alertController.addAction(cameraAction)
+        
         //Add Library Action
         let libraryAction: UIAlertAction = UIAlertAction(title: "Photo & Video Library", style: .default) { (action) in
             self.presentLibraryPicker(type: type)
@@ -65,6 +73,35 @@ public class MediaPicker: NSObject {
 
         //Show Alert
         self.viewController?.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func presentCameraPicker(type: MediaPickerType) {
+        //Setup Types
+        var pickerTypes: [String] = []
+        switch type {
+        case .photos:
+            pickerTypes.append(kUTTypeImage as String)
+            break
+
+        case .videos:
+            pickerTypes.append(kUTTypeMovie as String)
+            break
+
+        case .photosVideos:
+            pickerTypes.append(kUTTypeImage as String)
+            pickerTypes.append(kUTTypeMovie as String)
+            break
+
+        default:
+            break
+        }
+
+        //Setup Picker
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        imagePicker.mediaTypes = pickerTypes
+        imagePicker.allowsEditing = true
+        self.viewController?.present(imagePicker, animated: true, completion: nil)
     }
 
     private func presentLibraryPicker(type: MediaPickerType) {
