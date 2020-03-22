@@ -76,7 +76,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '11.0'
 use_frameworks!
 
-pod 'BSMediaPicker', '~> 0.1.0'
+pod 'BSMediaPicker', '~> 0.3.0'
 ```
 
 Then, run the following command:
