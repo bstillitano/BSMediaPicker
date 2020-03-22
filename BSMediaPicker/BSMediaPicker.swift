@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 import MobileCoreServices
 
+public enum MediaPickerSource: String {
+    case camera
+    case library
+    case documents
+}
 public enum MediaPickerType: String {
     case photos
     case videos
@@ -36,7 +41,7 @@ public class MediaPicker: NSObject {
         super.init()
     }
 
-    public func showMediaPicker(from presentingViewController: UIViewController, type: MediaPickerType = .photosVideos) {
+    public func showMediaPicker(from presentingViewController: UIViewController, type: MediaPickerType = .photosVideos, sources: [MediaPickerSource] = [.camera, .library, .documents]) {
         //Set Data
         self.viewController = presentingViewController
 
@@ -44,37 +49,43 @@ public class MediaPicker: NSObject {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         //Add Camera Action
-        let cameraAction: UIAlertAction = UIAlertAction(title: "Camera", style: .default) { (action) in
-            self.presentCameraPicker(type: type)
+        if sources.contains(.camera) {
+            let cameraAction: UIAlertAction = UIAlertAction(title: "Camera", style: .default) { (action) in
+                self.presentCameraPicker(type: type)
+            }
+            cameraAction.setValue(UIImage(named: "gallery_picker_camera"), forKey: "image")
+            cameraAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            alertController.addAction(cameraAction)
         }
-        cameraAction.setValue(UIImage(named: "gallery_picker_camera"), forKey: "image")
-        cameraAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        alertController.addAction(cameraAction)
-        
+
         //Add Library Action
-        let libraryAction: UIAlertAction = UIAlertAction(title: "Photo & Video Library", style: .default) { (action) in
-            self.presentLibraryPicker(type: type)
+        if sources.contains(.library) {
+            let libraryAction: UIAlertAction = UIAlertAction(title: "Photo & Video Library", style: .default) { (action) in
+                self.presentLibraryPicker(type: type)
+            }
+            libraryAction.setValue(UIImage(named: "gallery_picker_library"), forKey: "image")
+            libraryAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            alertController.addAction(libraryAction)
         }
-        libraryAction.setValue(UIImage(named: "gallery_picker_library"), forKey: "image")
-        libraryAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        alertController.addAction(libraryAction)
 
         //Add Cloud Action
-        let cloudAction: UIAlertAction = UIAlertAction(title: "Other Locations", style: .default) { (action) in
-            self.presentDocumentPicker(type: type)
-        }
-        cloudAction.setValue(UIImage(named: "gallery_picker_cloud"), forKey: "image")
-        cloudAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
-        alertController.addAction(cloudAction)
+        if sources.contains(.documents) {
+            let cloudAction: UIAlertAction = UIAlertAction(title: "Other Locations", style: .default) { (action) in
+                self.presentDocumentPicker(type: type)
+            }
+            cloudAction.setValue(UIImage(named: "gallery_picker_cloud"), forKey: "image")
+            cloudAction.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            alertController.addAction(cloudAction)
 
-        //Add Cancel Action
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
+            //Add Cancel Action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(cancelAction)
+        }
 
         //Show Alert
         self.viewController?.present(alertController, animated: true, completion: nil)
     }
-    
+
     private func presentCameraPicker(type: MediaPickerType) {
         //Setup Types
         var pickerTypes: [String] = []
