@@ -3,7 +3,7 @@
 Welcome to **BSMediaPicker,** a UI/UX framework for allowing users to quickly and easily select photos and/or videos from their device library as well as other third party applications. The libary implements both a UIImagePickerController and a UIDocumentPickerViewController to achieve this.
 
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](https://en.wikipedia.org/wiki/MIT_License)
-[![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.1.0-blue)](https://img.shields.io/badge/pod-v0.1.0-blue)
+[![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.3.0-blue)](https://img.shields.io/badge/pod-v0.3.0-blue)
 [![Twitter](https://img.shields.io/badge/twitter-bstillita-1da1f2)](https://twitter.com/bstillita)
 ![Platform](https://img.shields.io/badge/platform-ios-success)
 
