@@ -1,6 +1,6 @@
 # BSMediaPicker
 
-Welcome to **BSMediaPicker,** a UI/UX framework for allowing users to quickly and easily select photos and/or videos from their device library as well as other third party applications. The libary implements both a UIImagePickerController and a UIDocumentPickerViewController to achieve this.
+Welcome to **BSMediaPicker,** a UI/UX framework for allowing users to quickly and easily take and/or select photos and/or videos from their device library as well as other third party applications. The libary implements both a UIImagePickerController and a UIDocumentPickerViewController to achieve this.
 
 [![License](https://img.shields.io/badge/license-MIT-lightgrey)](https://en.wikipedia.org/wiki/MIT_License)
 [![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.3.0-blue)](https://img.shields.io/badge/pod-v0.3.0-blue)
@@ -13,6 +13,7 @@ Welcome to **BSMediaPicker,** a UI/UX framework for allowing users to quickly an
 
 ## Features
 
+- [x] Able to set picker source on the fly (camera, documents, library) as an array
 - [x] Able to set picker type on the fly (photo only, video only, photo and video)
 - [x] Pre-built UI (no customisation....YET)
 - [x] Implements the default UIImagePickerControllerDelegate and UIDocumentPickerDelegate into a handy single MediaPickerDelegate
