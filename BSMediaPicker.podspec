@@ -5,7 +5,7 @@ s.ios.deployment_target = '11.0'
 s.name = "BSMediaPicker"
 s.summary = "BSMediaPicker lets a user select photos and videos from their device."
 s.requires_arc = true
-s.version = "0.2.0"
+s.version = "0.3.0"
 s.license = { :type => "MIT", :file => "LICENSE" }
 s.author = { "Brandon Stillitano" => "b.stillitano95@gmail.com" }
 s.homepage = "https://github.com/bstillitano/BSMediaPicker"
